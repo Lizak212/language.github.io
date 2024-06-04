@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Learning Spanish</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: red;
+    }
+
+    header {
+      background-color: black;
+      padding: 20px;
+    }
+
+    .button-link {
+      text-decoration: none;
+      color: white;
+      margin: 0 50px;
+    }
+
+    form {
+      display: inline-block;
+      text-align: left;
+      margin-top: 50px;
+      color: white;
+      padding: 10px;
+      border: solid black 2px;
+    }
+
+    .alert {
+      background-color: #4CAF50;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate (-50%, -50%);
+      visibility: hidden;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class = "button-link" href = "index.html">Home Page</a>
+    <a class = "button-link" href = "lesson1.html">Lesson 1</a>
+    <a class = "button-link" href = "lesson2.html">Lesson 2</a>
+    <a class = "button-link" href = "quiz1.html">Quiz 1</a>
+    <a class = "button-link" href = "quiz2.html">Quiz 2</a>
+  </header>
+
+  <form>
+    <label>1. How would you say 'hamburger' in Spanish?</label>
+    <input type = "radio" name = "q1" onclick = "check_answer ('1', 'La Hamburger')">La Hamburger
+    <input type = "radio" name = "q1" onclick = "check_answer ('1', 'La Hamburguresa')">La Hamburguresa
+    <input type = "radio" name = "q1" onclick = "check_answer ('1', 'La Hamburguesa')">La Hamburguesa
+    <input type = "radio" name = "q1" onclick = "check_answer ('1', 'La Hamburgesa')">La Hamburgesa
+
+    <br><br>
+
+    <label>2. How would you say 'hot dog' in Spanish?</label>
+    <input type = "radio" name = "q2" onclick = "check_answer ('2', 'Perrita Caliente')">Perrita Caliente 
+    <input type = "radio" name = "q2" onclick = "check_answer ('2', 'Perrito Caliento')">Perrito Caliento
+    <input type = "radio" name = "q2" onclick = "check_answer ('2', 'Perrito Calienta')">Perrito Calienta
+    <input type = "radio" name = "q2" onclick = "check_answer ('2', 'Perrito Caliente')">Perrito Caliente
+
+    <br><br>
+
+    <label>3. How would you say 'Ice Cream' in Spanish?</label>
+    <input type = "radio" name = "q3" onclick = "check_answer ('3', '')">El Haledo
+    <input type = "radio" name = "q3" onclick = "check_answer ('3', 'La Helada')">La Helada
+    <input type = "radio" name = "q3" onclick = "check_answer ('3', 'El Helado')">El Helado 
+    <input type = "radio" name = "q3" onclick = "check_answer ('3', 'La Helado')">La Helado
+
+    <br><br>
+
+    <label>4. How would you say 'French Fries' in Spanish</label>
+    <input type = "radio" name = "q4" onclick = "check_answer ('4', 'Papa Fritas')">Papa Fritas
+    <input type = "radio" name = "q4" onclick = "check_answer ('4', 'Papas Fritas')">Papas Fritas
+    <input type = "radio" name = "q4" onclick = "check_answer ('4', 'Papas Frita')">Papas Frita
+    <input type = "radio" name = "q4" onclick = "check_answer ('4', 'Papas Fritos')">Papas Fritos
+
+    <br><br>
+
+    <label>5. How would you say 'Salad' in Spanish?</label>
+    <input type = "radio" name = "q5" onclick = "check_answer ('5', 'El Ensalade')">El Ensalade
+    <input type = "radio" name = "q5" onclick = "check_answer ('5', 'La Ensalada')">La Ensalada
+    <input type = "radio" name = "q5" onclick = "check_answer ('5', 'La Salade')">La Salade
+    <input type = "radio" name = "q5" onclick = "check_answer ('5', 'El Salade')">El Salade
+  </form>
+
+  <div class = "alert" id = "alert">
+    <p id = "alert-text"></p>
+    <button onclick = "hide_alert()">Close</button>
+  </div>
+
+  <script>
+    function check_answer (question, answer) {
+      if (question == "1" && answer == "La Hamburguesa") {
+        show_alert ("Correct!");
+      } else if (question == "2" && answer == "Perrito Caliente") {
+        show_alert ("Correct!");
+      } else if (question == "3" && answer == "El Helado ") {
+        show_alert ("Correct!");
+      } else if (question == "4" && answer == "Papas Fritas") {
+        show_alert ("Correct!");
+      } else if (question == "5" && answer == "La Ensalada") {
+        show_alert ("Correct!");
+      } else {
+        show_alert ("Incorrect!");
+      }
+    }
+
+    function show_alert (message) {
+      var alert = document.getElementById ("alert");
+      var alert_text = document.getElementById ("alert-text");
+      alert.style.visibility = "visible";
+      alert_text.innerHTML = message;
+    }
+
+    function hide_alert () {
+      var alert = document.getElementById ("alert");
+      alert.style.visibility = "hidden";
+    }
+  </script>
+
+</body>
+
+</html>

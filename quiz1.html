@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Learning Spanish</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: red;
+    }
+
+    header {
+      background-color: black;
+      padding: 20px;
+    }
+
+    .button-link {
+      text-decoration: none;
+      color: white;
+      margin: 0 50px;
+    }
+
+    form {
+      display: inline-block;
+      text-align: left;
+      margin-top: 50px;
+      color: white;
+      padding: 10px;
+      border: solid black 2px;
+    }
+
+    .alert {
+      background-color: #4CAF50;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate (-50%, -50%);
+      visibility: hidden;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class = "button-link" href = "index.html">Home Page</a>
+    <a class = "button-link" href = "lesson1.html">Lesson 1</a>
+    <a class = "button-link" href = "lesson2.html">Lesson 2</a>
+    <a class = "button-link" href = "quiz1.html">Quiz 1</a>
+    <a class = "button-link" href = "quiz2.html">Quiz 2</a>
+  </header>
+
+  <form>
+    <label>1. How would you say 'cat' (female) in Spanish?</label>
+    <input type = "radio" name = "q1" onclick = "check_answer ('1', 'El Gata')">El Gata
+    <input type = "radio" name = "q1" onclick = "check_answer ('1', 'La Gato')">La Gato
+    <input type = "radio" name = "q1" onclick = "check_answer ('1', 'La Gata')">La Gata 
+    <input type = "radio" name = "q1" onclick = "check_answer ('1', 'Les Gatas')">Les Gatas
+
+    <br><br>
+
+    <label>2. How would you say 'dog' (male) in Spanish?</label>
+    <input type = "radio" name = "q2" onclick = "check_answer ('2', 'La Perro')">La Perro
+    <input type = "radio" name = "q2" onclick = "check_answer ('2', 'El Pera')">El Pera
+    <input type = "radio" name = "q2" onclick = "check_answer ('2', 'La Perra')">La Perra
+    <input type = "radio" name = "q2" onclick = "check_answer ('2', 'El Perro')">El Perro
+
+    <br><br>
+
+    <label>3. How would you say 'turtle' in Spanish?</label>
+    <input type = "radio" name = "q3" onclick = "check_answer ('3', 'La Tortaga')">La Tortaga 
+    <input type = "radio" name = "q3" onclick = "check_answer ('3', 'El Tortuga')">El Tortuga 
+    <input type = "radio" name = "q3" onclick = "check_answer ('3', 'La Tortuga')">La Tortuga
+    <input type = "radio" name = "q3" onclick = "check_answer ('3', 'El Tortuga')">El Tortagu
+
+    <br><br>
+
+     <label>4. How would you say 'bunny' (female) in Spanish?</label>
+    <input type = "radio" name = "q4" onclick = "check_answer ('4', 'El Conijito')">El Conijito
+    <input type = "radio" name = "q4" onclick = "check_answer ('4', 'La Conjita')">La Conjita
+    <input type = "radio" name = "q4" onclick = "check_answer ('4', 'El Conjito')">El Conjito
+    <input type = "radio" name = "q4" onclick = "check_answer ('4', 'La Conijita')">La Conijita
+
+    <br><br>
+
+    <label>5. How would you say 'hamster' in Spanish?</label>
+    <input type = "radio" name = "q5" onclick = "check_answer ('5', 'La Hamsita')">La Hamsita 
+    <input type = "radio" name = "q5" onclick = "check_answer ('5', 'El Hàmster')">El Hàmster 
+    <input type = "radio" name = "q5" onclick = "check_answer ('5', 'La Hamster')">La Hamster
+    <input type = "radio" name = "q5" onclick = "check_answer ('5', 'El Hámster')">El Hámster
+  </form>
+
+  <div class = "alert" id = "alert">
+    <p id = "alert-text"></p>
+    <button onclick = "hide_alert()">Close</button>
+  </div>
+
+  <script>
+    function check_answer (question, answer) {
+      if (question == "1" && answer == "La Gata") {
+        show_alert ("Correct!");
+      } else if (question == "2" && answer == "El Perro") {
+        show_alert ("Correct!");
+      } else if (question == "3" && answer == "La Tortuga") {
+        show_alert ("Correct!");
+      } else if (question == "4" && answer == "La Conijita") {
+        show_alert ("Correct!");
+      } else if (question == "5" && answer == "El Hámster") {
+        show_alert ("Correct!");
+      } else {
+        show_alert ("Incorrect!");
+      }
+    }
+
+    function show_alert (message) {
+      var alert = document.getElementById ("alert");
+      var alert_text = document.getElementById ("alert-text");
+      alert.style.visibility = "visible";
+      alert_text.innerHTML = message;
+    }
+
+    function hide_alert () {
+      var alert = document.getElementById ("alert");
+      alert.style.visibility = "hidden";
+    }
+  </script>
+
+</body>
+
+</html>
